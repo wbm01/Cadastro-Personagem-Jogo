@@ -1,0 +1,81 @@
+using System;
+
+public class Aula{
+
+public static void Main(){
+
+int i = 0;
+string decisao;
+	
+	
+inicio:
+
+Console.Write("BEM VINDO!\n\n");
+Console.Write("Informe o número de jogadores: ");
+i = Int32.Parse(Console.ReadLine());
+
+string[] nomes = new string[i];
+int[] velocidade = new int[i];
+int[] chute = new int[i];
+
+Console.Write("Obrigado!\n\n");
+
+for(int a=0 ; a<nomes.Length; a++){
+Console.Write("Informe o nome do jogador: ");
+nomes[a] = (Console.ReadLine());
+}
+	Console.Clear();
+
+	Console.WriteLine("Você informou os jogadores:");
+	
+	foreach(string nome in nomes){
+	
+	Console.WriteLine(nome);
+	}
+
+for(int b=0 ; b<nomes.Length; b++){
+Console.Write("Informe a velocidade do jogador " + nomes[b] + " ");
+velocidade[b] = int.Parse((Console.ReadLine()));
+	
+	if(velocidade[b]>10){
+	velocidade[b] = 10;
+	}
+}
+	
+for(int c=0 ; c<nomes.Length; c++){
+Console.Write("Informe a força do chute do jogador " + nomes[c] + " ");
+chute[c] = int.Parse((Console.ReadLine()));
+	
+	if(chute[c]>10){
+	chute[c] = 10;
+	}
+}
+
+    Console.Clear();
+	
+	Console.Write("Você informou estes jogadores:\n\n");
+	
+	for(int d=0 ; d<nomes.Length ; d++){
+	
+	Console.Write("Nome: " + nomes[d] + "\n");
+	Console.Write("Velocidade: " + velocidade[d] + "\n");
+	Console.Write("Força do chute: " + chute[d] + "\n");
+	Console.Write("_____________________________________\n\n");
+	}
+
+	
+	Console.Write("Tecle S para iniciar ou N para difinir novos jogadores: ");
+	decisao = Console.ReadLine();
+	
+	if (decisao == "S" || decisao == "s"){
+	Console.Write("BOM JOGO!");
+	}
+	else{
+	Console.Clear();
+	goto inicio;
+	
+	}
+
+
+}
+}
